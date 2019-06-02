@@ -1,5 +1,5 @@
 # Specific_Projects
-Project-Specific files for data analysis.
+Project-Specific files for automating data analysis for paired patch-clamp recordings from electrically-coupled neurons. Processing, descriptive statistics, ANOVA, and plotting are all coded in Python (3.73). Dunnett's posthoc test is performed in R. 
 
 ## For the 6-2-19 China trip:
 ### Paired Recording data:
