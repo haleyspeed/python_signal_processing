@@ -1,0 +1,38 @@
+---
+title: "Advanced Trace Selector"
+output:
+  html_notebook: default
+  pdf_document: default
+---
+
+
+
+```{r}
+
+start <-1         # Starting sweep number 
+intervals <- 6    # The number of interstimulus intervals 
+reps <- 10        # The number of sweeps per interval 
+current <- 1      # Keeps track of which interstimulus interval you are averaging 
+
+while (current <= intervals){       # Construct the line for the first interval 
+  rep <- as.character(start)
+  n <- start + intervals            # Increment to the next sweep with that same interval 
+  i <- 1          # While loop counter 
+  
+  # sequentially adds to the list of traces for the current interstimulus interval 
+  while (i < reps){ 
+    rep <- paste(rep, ",", sep = "") 
+    rep <- paste(rep, as.character(n), sep = "") 
+    n <- n + intervals 
+    i <- i + 1 
+  } 
+    print(rep) # Outputs the completed line to paste into "average traces" 
+  
+  start <- start + 1 # Resets the current trace to the first sweep of the next interval 
+  n <- start + current # Resets the current trace to the first sweep of the next interval 
+  current <- current + 1 # Goes to the next interval and repeats the process 
+}
+
+```
+
+
